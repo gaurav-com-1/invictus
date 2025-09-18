@@ -1,14 +1,16 @@
-# This file provides the definitive build configuration for Netlify.
+# This is the definitive build configuration for a nested Next.js project.
+# This file MUST be in the root of your GitHub repository.
 
 [build]
-  # This is the command to build the site.
+  # This tells Netlify where your Next.js project is located.
+  base = "invictus-nextjs"
+
+  # The command to build the site, run from within the 'base' directory.
   command = "npm run build"
 
-  # This is the directory that contains the finished site.
-  # For Next.js, it is always .next
+  # The directory containing the build output, relative to the 'base' directory.
   publish = ".next"
 
-# This section explicitly tells Netlify to use its Next.js runtime plugin.
-# This is the most crucial part that fixes the "Page not found" error.
+# This plugin is essential for running the Next.js server runtime.
 [[plugins]]
   package = "@netlify/plugin-nextjs"
