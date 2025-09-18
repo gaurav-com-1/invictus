@@ -1,0 +1,14 @@
+# This file provides the definitive build configuration for Netlify.
+
+[build]
+  # This is the command to build the site.
+  command = "npm run build"
+
+  # This is the directory that contains the finished site.
+  # For Next.js, it is always .next
+  publish = ".next"
+
+# This section explicitly tells Netlify to use its Next.js runtime plugin.
+# This is the most crucial part that fixes the "Page not found" error.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
